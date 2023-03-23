@@ -31,6 +31,18 @@ def encode(given_pw):       # encodes a given password by adding 3 to each numbe
     final = ''.join(str(num) for num in encoded_pw)     # joins items together for a combined string
     return final
 
+def decoder(new_password):
+    res = ""
+    for num in new_password:
+        if 3 <= int(num) <= 9:
+            res += str(int(num) - 3)
+        elif int(num) == 1:
+            res += str(int(num) + 7)
+        elif int(num) == 2:
+            res += str(int(num) + 7)
+        elif int(num) == 0:
+            res += str(int(num) + 7)
+    return res
 
 # main program
 while running:
