@@ -42,7 +42,9 @@ while running:
         storage = encode(password)      # stores the password for later decoding
         print('Your password has been encoded and stored!')
     elif option == 2:
-        pass
+        encoded_password = encoder(password)
+        original_password = password
+        print(f"The encoded password is {encoded_password}, and the original password is {original_password}."
     elif option == 3:
         running = False     # ends the while loop
     else:
