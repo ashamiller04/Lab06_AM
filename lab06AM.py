@@ -31,7 +31,7 @@ def encode(given_pw):       # encodes a given password by adding 3 to each numbe
     final = ''.join(str(num) for num in encoded_pw)     # joins items together for a combined string
     return final
 
-def decoder(new_password): 
+def decoder(new_password): # Tabitha Bishop
     res = ""
     for num in new_password:
         if 3 <= int(num) <= 9:
@@ -40,9 +40,11 @@ def decoder(new_password):
             res += str(int(num) + 7)
         elif int(num) == 2:
             res += str(int(num) + 7)
-        elif int(num) == 0:
+        elif int(num) == 0: 
             res += str(int(num) + 7)
     return res
+    # 0, 1, 2 decoded are 7,8,9 since digits cannot exceed double digits
+    # takes new encoded password and returns it back to original password
 
 # main program
 while running:
@@ -53,7 +55,7 @@ while running:
         password = input('Please enter your password to encode: ')
         storage = encode(password)      # stores the password for later decoding
         print('Your password has been encoded and stored!')
-    elif option == 2:
+    elif option == 2: #Tabitha Bishop
         encoded_password = encoder(password)
         original_password = password
         print(f"The encoded password is {encoded_password}, and the original password is {original_password}."
